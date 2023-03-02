@@ -7,9 +7,9 @@ class ConvertionException(Exception):
 
 
 
-class get_price:
+class Exceptions:
     @staticmethod
-    def convert(base: str, quote: str, amount: str):
+    def get_price(base: str, quote: str, amount: str):
         #  Ошибку с количеством переменных вынес в основной код, так же решил, что ввод одинаковых валют для конвертации
         #  некритичен, так как в этом случае бот отрабатывает корректно
 
