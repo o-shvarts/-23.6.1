@@ -28,7 +28,8 @@ def values(message: telebot.types.Message):
 @bot.message_handler(content_types=['text', ])
 def get_price(message: telebot.types.Message):
     try:
-        values = message.text.split(' ')
+        lower_message = message.text.lower()
+        values = lower_message.split(' ')
         if len(values) == 3:    #Немного изменил конструкцию
             base, quote, amount = values
 
