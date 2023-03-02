@@ -1,5 +1,5 @@
 import telebot
-from extensions import ConvertionException, get_price
+from extensions import ConvertionException, Exceptions
 from config import TOKEN, keys
 
 bot = telebot.TeleBot(TOKEN)
@@ -32,7 +32,7 @@ def convert(message: telebot.types.Message):
         if len(values) == 3:    #Немного изменил конструкцию
             base, quote, amount = values
 
-            total_quote = get_price.convert(base, quote, amount)
+            total_quote = Exceptions.get_price(base, quote, amount)
             amount = float(amount)
 
             text = f'Стоимость {amount} {base} - {(total_quote * amount)} {quote}'
